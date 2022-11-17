@@ -1,0 +1,14 @@
+@use '../abstracts/' as *;
+
+* {
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: $kumbhFont;
+
+    a {
+        text-decoration: none;
+    }
+}

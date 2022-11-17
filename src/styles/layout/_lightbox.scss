@@ -1,0 +1,232 @@
+@use '../abstracts/' as *;
+
+.lightbox {
+
+    @include dt {
+        display: none;
+    }
+
+    &-open {
+        @include dt {
+            position: absolute;
+            top: 0;
+            left: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            background-color: hsla(0, 0, 0, .75);
+        }
+    }
+
+    &__btn {
+        display: none;
+
+        @include dt {
+            display: block;
+            position: absolute;
+            left: 68.65%;
+            top: 8.5%;
+            border: none;
+            height: 1.3rem;
+            aspect-ratio: 1;
+            background-color: transparent;
+            cursor: pointer;
+
+            &:hover {
+                svg {
+                    path {
+                        fill: $orange;
+                    }
+                }
+            }
+
+            svg {
+                height: 100%;
+                width: auto;
+
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+
+    &__large {
+        position: relative;
+        height: 18.5rem;
+        overflow: hidden;
+
+        @include dt {
+            height: fit-content;
+            overflow: visible;
+        }
+
+
+        &-productImg {
+            width: 100vw;
+            transform: translateY(-40px);
+
+            @include dt {
+                height: 33.9rem;
+                width: auto;
+                transform: translateY(0px);
+                border-radius: 1rem;
+            }
+        }
+
+        button {
+            height: 1rem;
+            aspect-ratio: 1;
+        }
+    }
+
+    &__nextAndPrev {
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 45%;
+
+        @include dt {
+            height: 3.5rem;
+            width: 3.5rem;
+            top: 43.5%;
+        }
+
+        button {
+            height: fit-content;
+            width: fit-content;
+            background-color: transparent;
+            border: none;
+            width: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 1.15rem;
+                width: auto;
+            }
+
+            @include dt {
+                cursor: pointer;
+
+
+
+
+                &:hover svg>path {
+                    stroke: $orange;
+                }
+            }
+        }
+    }
+
+    &__prev {
+        position: absolute;
+        left: 4%;
+
+        @include dt {
+            left: -5.25%;
+        }
+
+
+        button>svg {
+            transform: translateX(-1px);
+        }
+    }
+
+    &__next {
+        position: absolute;
+        right: 4%;
+
+        @include dt {
+            right: -4.5%;
+        }
+
+        button>svg {
+            transform: translateX(2px);
+        }
+
+    }
+
+    &__small {
+        display: none;
+
+        @include dt {
+            display: block;
+            margin-top: 2.1rem;
+            width: 29rem;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+
+            &-current {
+                height: 5.7rem;
+                position: relative;
+                border-radius: .75rem;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    height: 5.7rem;
+                    width: 5.7rem;
+                    background-color: hsla(0, 0%, 100%, .45);
+                    border-radius: .75rem;
+                    border: 2px solid $orange;
+                    cursor: pointer;
+                }
+
+                img {
+                    height: 5.85rem;
+                    width: auto;
+                    border-radius: .75rem;
+                }
+            }
+
+            &-overlay {
+
+                @include dt {
+                    height: 5.7rem;
+                    width: auto;
+                    position: relative;
+                    border-radius: .75rem;
+
+                    &:hover::after {
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-color: hsla(0, 0%, 100%, .45);
+                        border-radius: .75rem;
+                        cursor: pointer;
+                    }
+
+                }
+
+                img {
+                    height: 5rem;
+                    width: auto;
+
+                    @include dt {
+                        height: 100%;
+                        width: auto;
+                        border-radius: .75rem;
+                    }
+                }
+            }
+
+        }
+    }
+}

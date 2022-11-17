@@ -1,0 +1,82 @@
+@use '../abstracts' as *;
+
+.header {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+
+    @include dt {
+        margin-top: 1.9rem;
+        padding-bottom: 1.85rem;
+        border-bottom: 3px solid $light-grayish-blue;
+        justify-content: start;
+    }
+
+    &__hamburger {
+        border: none;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        margin-left: 1.5rem;
+        width: 1rem;
+        z-index: 9999;
+
+        @include dt {
+            display: none;
+        }
+
+        img {
+            height: .95rem;
+
+        }
+    }
+
+    &__logo {
+
+        margin-left: 1rem;
+
+        @include dt {
+            cursor: pointer;
+            margin-left: 0;
+        }
+
+        img {
+            height: 1.25rem;
+        }
+    }
+
+    &__cart {
+        margin-left: auto;
+        margin-right: 1.25rem;
+        border: none;
+        background-color: white;
+        display: flex;
+        align-items: center;
+
+        @include dt {
+            cursor: pointer;
+            margin-right: 2.75rem;
+        }
+
+        img {
+            height: 1.25rem;
+        }
+    }
+
+    &__avatar {
+        height: 1.5rem;
+        width: auto;
+        margin-right: 1.5rem;
+
+        @include dt {
+            cursor: pointer;
+            height: 3.25rem;
+            margin-right: 1rem;
+
+            &:hover {
+                border: 2px solid $orange;
+                border-radius: 50%;
+            }
+        }
+    }
+}

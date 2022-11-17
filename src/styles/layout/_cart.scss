@@ -1,0 +1,134 @@
+@use '../abstracts/' as *;
+
+.inCart {
+    &-open {
+        height: .8rem;
+        aspect-ratio: 1.4;
+        background-color: $orange;
+        border-radius: .6rem;
+        position: absolute;
+        right: 16%;
+        top: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        font-size: .6rem;
+
+        @include dt {
+            right: 17.5%;
+            top: 4.57%;
+        }
+    }
+}
+
+.cart {
+    position: absolute;
+    top: 12%;
+    left: 2%;
+    z-index: 99;
+    width: 96%;
+    height: 38%;
+    border-radius: .6rem;
+    background-color: white;
+    transform: translatex(-200%);
+    transition: transform 350ms ease-in-out;
+    box-shadow:
+        0px 0.7px 0px rgba(0, 0, 0, 0.02),
+        0px 1.8px 1.2px rgba(0, 0, 0, 0.028),
+        0px 3.4px 4.5px rgba(0, 0, 0, 0.035),
+        0px 6px 11.1px rgba(0, 0, 0, 0.042),
+        0px 11.3px 24.5px rgba(0, 0, 0, 0.05),
+        0px 27px 60px rgba(0, 0, 0, 0.07);
+
+    @include dt {
+        width: 22.5rem;
+        height: 16rem;
+        left: 67.5%;
+        transform: translatey(-200%);
+    }
+
+    &-open {
+        transform: translatex(0%);
+
+        @include dt {
+            transform: translatex(0%);
+        }
+    }
+
+    &__heading {
+        padding: 1.4rem 0 1.25rem 1.4rem;
+        border-bottom: 2px solid $light-grayish-blue;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 18% 64% 18%;
+        grid-row: 1fr 1fr;
+        max-height: 3rem;
+        margin: 1.5rem 1.4rem 2rem 1.4rem;
+    }
+
+    &__empty {
+        display: flex;
+        justify-content: center;
+        font-weight: $heavy;
+        color: $dark-grayish-blue;
+        transform: translateY(75px);
+    }
+
+    &__img {
+        width: 3.5rem;
+        height: auto;
+        border-radius: .35rem;
+        grid-row: 1/3;
+        grid-column: 1/2;
+    }
+
+    &__title {
+        grid-row: 1/2;
+        grid-column: 2/3;
+        display: flex;
+        align-items: center;
+        margin-left: .75rem;
+    }
+
+    &__price {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        display: flex;
+        align-items: center;
+        margin-left: .75rem;
+    }
+
+    &__delete {
+        grid-row: 1/3;
+        grid-column: 3/4;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__btnDiv {
+        margin: 0 1.4rem;
+    }
+
+    &__btn {
+        width: 100%;
+        height: 3.5rem;
+        border-radius: .75rem;
+        background-color: $orange;
+        color: $white;
+        border: none;
+        font-weight: $heavy;
+        letter-spacing: .05rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: hsl(26, 100%, 70%);
+        }
+    }
+}
